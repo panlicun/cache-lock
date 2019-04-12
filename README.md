@@ -12,7 +12,8 @@
 
 
 
-2. 将 `CacheLockAop` 类注入到项目中，传入使用的缓存对象，目前只支持redis缓存，故使用spring的RedisTemplate对象。例如
+2. 将 `CacheLockAop` 类注入到项目中，传入使用的缓存对象，目前只支持redis缓存，故使用spring的RedisTemplate对象
+（使用StringRedisTemplate可以，RedisTemplate<K,V>对象redis中无法清除记录）。例如
 	
 		@Bean
 		public CacheLockAop cacheLockAop(RedisTemplate redisTemplate){
